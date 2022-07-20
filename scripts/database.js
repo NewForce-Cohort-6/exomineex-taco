@@ -37,6 +37,22 @@ const database = {
     {
         id: 2,
         name: "Nova Winnebago 765-00"
+    },
+    {
+      id: 3, 
+      name: "NaN Windwaker 82-B4"
+    },
+    {
+      id: 4,
+      name: "Zulu Legacy C6-15"
+    },
+    {
+      id: 5,
+      name: "Delta Syracuse 86-08"
+    },
+    {
+      id: 6,
+      name: "Kilo Gallimimus AB1-24"
     }
   ],
   transientState: {},
@@ -51,4 +67,12 @@ export const getFacilities = () => {
   return database.facilities.map((f) => ({ ...f }));
 };
 
+export const setTransport = (transportId) => {
+  database.transientState.selectedTransport = transportId;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+}
+
+export const getTransport = () => {
+  return database.transports.map((transport) => ({...transport}))
+}
 
