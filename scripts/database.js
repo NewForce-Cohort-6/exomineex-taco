@@ -8,6 +8,10 @@ const database = {
       id: 2,
       name: "Projectium",
     },
+    {
+      id: 3,
+      name:"Unobtainium"
+    }
   ],
   facilities: [
     {
@@ -51,4 +55,14 @@ export const getFacilities = () => {
   return database.facilities.map((f) => ({ ...f }));
 };
 
+export const getMinerals =()=>{
+  return database.minerals.map((m)=>({...m }));
+}
 
+export const setMineral =(id)=>{
+  database.transientState.selectedFacility = id;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+}
+
+
+ 
