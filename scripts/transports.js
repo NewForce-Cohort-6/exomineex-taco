@@ -14,14 +14,18 @@ document.addEventListener(
 )
 
 export const trans = () => {
-    let html = "<h2>Transportation</h2>"
+    let html =  '<h2 class="transit__choices">Transports</h2>'
 
     html += '<select id="transit">'
+
     html += '<option value="0">Transport</option>'
 
-    for (const transport of transports) {
-        html += `<option value="${transport.id}">${transport.name}</option>`
-    }
-html += "</select>"
-return html
+    const transportChoices = transports.map(transport => {
+        return `<option value="${transport.id}">${transport.name}</option>`
+    })
+
+    html += transportChoices.join("")
+    html += "</select>"
+    
+    return html
 }
