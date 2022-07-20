@@ -1,4 +1,6 @@
 const database = {
+  orderBuilder: {},
+
   minerals: [
     {
       id: 1,
@@ -17,6 +19,10 @@ const database = {
     {
       id: 2,
       name: "Io",
+    },
+    {
+      id: 3,
+      name: "Cheapio",
     },
   ],
   colonies: [
@@ -48,7 +54,24 @@ export const setFacility = (facilityId) => {
 };
 
 export const getFacilities = () => {
-  return database.facilities.map((f) => ({ ...f }));
+  return database.facilities.map((facility) => ({ ...facility }));
 };
 
+
+
+export const addCustomOrder = () => {
+  
+  const newOrder = {...database.orderBuilder}
+
+    const lastIndex = database.transientState.length - 1
+  newOrder.id = database.transientState[lastIndex].id + 1
+
+  newOrder.timestamp = Date.now()
+  
+  database.transientState.push(newOrder)
+  
+  database.orderBuilder = {}
+  
+  document.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
