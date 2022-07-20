@@ -99,7 +99,7 @@ export const getTransports = () =>{
   return database.transports.map((transport)=>({...transport }));
 }
 
-export const setTransports = (id) =>{
+export const setTransports = (transportId) =>{
   database.transientState.selectedFacility = transportId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
 }

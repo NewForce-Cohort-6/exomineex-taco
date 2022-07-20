@@ -4,26 +4,24 @@ const transports = getTransports()
 
 document.addEventListener(
     "change",
-    (clickEvent) => {
-        if (clickEvent.target.id === "transit") {
-            setTransports(parseInt(clickEvent.target.value))
+    (event) => {
+        if (event.target.id === "transit") {
+            setTransports(parseInt(event.target.value))
         }
     }
 )
 
 export const Transport = () => {
-    let html = "<h2>Transport</h2>"
+let html = `<h2 class="transit__choices">Transports</h2>`
 
-    html += '<select id="transit">'
-    html += '<option value="0">Select Transportation</option>'
+html += '<select id="transit">'
+html += '<option value="0">Select Transportation</option>'
+    const transportChoices = transports.map(transport => {
+        return `<option value="${transport.id}">${transport.name}</option>`
+    })
 
-    const transportOptions = transports.map( (transport) => {
-            return `<option value="${transport.id}">${transport.name}</option>`
-        }
-    )
-
-    html += transportOptions.join("")
+    html += transportChoices.join("")
     html += "</select>"
+
     return html
 }
-
