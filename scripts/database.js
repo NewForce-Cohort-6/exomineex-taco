@@ -8,6 +8,10 @@ const database = {
       id: 2,
       name: "Projectium",
     },
+    {
+      id: 3,
+      name:"Unobtainium"
+    }
   ],
   facilities: [
     {
@@ -28,6 +32,14 @@ const database = {
       id: 2,
       name: "Jupiter",
     },
+    {
+      id: 3,
+      name: "Luna"
+    },
+    {
+      id: 4,
+      name: "Pluto"
+    }
   ],
   transports : [
     {
@@ -37,7 +49,20 @@ const database = {
     {
         id: 2,
         name: "Nova Winnebago 765-00"
-    }
+    },
+    {
+      id: 3,
+      name: "Kilo Gallimimus 825-50"
+  },
+  {
+    id: 4,
+    name: "Zulu Legacy C6-15"
+},
+{
+  id: 5,
+  name: "NaN Windwaker 23-B5"
+},
+
   ],
   transientState: {},
 };
@@ -51,4 +76,31 @@ export const getFacilities = () => {
   return database.facilities.map((f) => ({ ...f }));
 };
 
+
+export const getColonies = () => {
+  return database.colonies.map((colony) => ({ ...colony }))
+}
+
+export const setColony = (colonyId) => {
+  database.transientState.colonyId = colonyId
+  document.dispatchEvent(new CustomEvent("stateChanged"))
+}
+
+export const getMinerals =()=>{
+  return database.minerals.map((m)=>({...m }));
+}
+
+export const setMineral =(id)=>{
+  database.transientState.selectedFacility = id;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+}
+
+export const getTransports = () =>{
+  return database.transports.map((transport)=>({...transport }));
+}
+
+export const setTransports = (id) =>{
+  database.transientState.selectedFacility = transportId;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+}
 

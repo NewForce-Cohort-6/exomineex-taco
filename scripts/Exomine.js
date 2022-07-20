@@ -3,8 +3,8 @@ import {Colonies} from "./Colonies.js"
 import {Facilites} from "./Facilities.js"
 import {Transport} from "./Transports.js"
 
-export const CarsRUs =()=>{
-    return `<h1> Cars 'R Us</h1>
+export const Exomine =()=>{
+    return `<h1> Exomine</h1>
     <article class ="choices">
         <section class ="options">
         ${Colonies()}
@@ -30,3 +30,4 @@ export const CarsRUs =()=>{
 </article>
     `
 }
+
