@@ -1,4 +1,4 @@
-import { setTransports, getTransports } from "./database.js"
+import { getTransports, setTransports } from "./database.js"
 
 const transports = getTransports()
 
@@ -15,7 +15,7 @@ export const Transport = () => {
 let html = `<h2 class="transit__choices">Transports</h2>`
 
 html += '<select id="transit">'
-html += '<option value="0">Select Transportation</option>'
+html += '<option value="0">Select Transportation...</option>'
     const transportChoices = transports.map(transport => {
         return `<option value="${transport.id}">${transport.name}</option>`
     })
