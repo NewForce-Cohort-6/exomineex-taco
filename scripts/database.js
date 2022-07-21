@@ -49,7 +49,20 @@ const database = {
     {
         id: 2,
         name: "Nova Winnebago 765-00"
-    }
+    },
+    {
+      id: 3,
+      name: "Kilo Gallimimus 825-50"
+  },
+  {
+    id: 4,
+    name: "Zulu Legacy C6-15"
+},
+{
+  id: 5,
+  name: "NaN Windwaker 23-B5"
+},
+
   ],
   transientState: {},
 };
@@ -79,6 +92,15 @@ export const getMinerals =()=>{
 
 export const setMineral =(id)=>{
   database.transientState.selectedFacility = id;
+  document.dispatchEvent(new CustomEvent("stateChanged"));
+}
+
+export const getTransports = () =>{
+  return database.transports.map((transport)=>({...transport }));
+}
+
+export const setTransports = (transportId) =>{
+  database.transientState.selectedFacility = transportId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 

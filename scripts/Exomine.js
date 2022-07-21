@@ -1,6 +1,6 @@
 import {Minerals} from "./Minerals.js"
 import {Colonies} from "./Colonies.js"
-import {Facilites} from "./Facilities.js"
+import {Facilities} from "./Facilities.js"
 import {Transport} from "./Transports.js"
 
 export const Exomine =()=>{
@@ -13,7 +13,7 @@ export const Exomine =()=>{
         ${Minerals()}
         </section>
         <section class ="options">
-        ${Facilites()}
+        ${Facilities()}
         </section>
         <section class ="options">
         ${Transport()}  
