@@ -12,10 +12,10 @@ document.addEventListener(
 )
 
 export const Facilities = () => {
-    let html = "<h2><br></h2>"
+    let html = "<h2>Facilities</h2>"
 
     html += '<select id="facilities">'
-    html += '<option value="0">Pick Facility</option>'
+    html += '<option value="0">Select a Facility</option>'
 
     const arrayOfOptions = facilities.map( (faciility) => {
             return `<option value="${faciility.id}">${faciility.name}</option>`

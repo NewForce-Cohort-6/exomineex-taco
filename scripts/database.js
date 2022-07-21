@@ -22,6 +22,10 @@ const database = {
       id: 2,
       name: "Io",
     },
+    {
+      id: 3,
+      name: "Cheapio",
+    },
   ],
   colonies: [
     {
@@ -82,7 +86,7 @@ export const getColonies = () => {
 }
 
 export const setColony = (colonyId) => {
-  database.transientState.colonyId = colonyId
+  database.transientState.selectedColony = colonyId
   document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
@@ -90,8 +94,8 @@ export const getMinerals =()=>{
   return database.minerals.map((m)=>({...m }));
 }
 
-export const setMineral =(id)=>{
-  database.transientState.selectedFacility = id;
+export const setMineral =(mineralId)=>{
+  database.transientState.selectedMineral = mineralId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 
@@ -100,7 +104,7 @@ export const getTransports = () =>{
 }
 
 export const setTransports = (transportId) =>{
-  database.transientState.selectedFacility = transportId;
+  database.transientState.selectedTransport = transportId;
   document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 
