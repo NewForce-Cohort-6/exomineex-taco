@@ -3,6 +3,13 @@ import {Colonies, selectedColonyDisplay} from "./Colonies.js"
 import {Facilities} from "./Facilities.js"
 import {Transport} from "./Transports.js"
 import { getColonies, getTransientState } from "./database.js"
+import {Minerals, selectedMineralDisplay} from "./Minerals.js"
+import {Colonies} from "./Colonies.js"
+import {Facilities} from "./Facilities.js"
+import {Transport, selectedTransportDisplay} from "./Transports.js"
+
+
+
 
 
 export const Exomine =()=>{
@@ -20,7 +27,7 @@ export const Exomine =()=>{
         <section class ="options">
         ${Transport()}  
         </section>
-        
+
     </article>
     <br>
     <article>
@@ -29,8 +36,13 @@ export const Exomine =()=>{
     <article class="customOrders">
     <h2>Purchased Minerals</h2>
     <p class="availabilityDisplay">
-        ${selectedColonyDisplay()}
+        
     </p>
+  <p class="availabilityDisplay">
+    ${selectedMineralDisplay()} <br>
+        ${selectedTransportDisplay()}
+        ${selectedColonyDisplay()}
+</p>
 </article>
     `
 }

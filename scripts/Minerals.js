@@ -1,4 +1,4 @@
-import {getMinerals, setMineral } from "./database.js"
+import {getMinerals, setMineral, getTransientState} from "./database.js"
 
 const minerals = getMinerals();
 
@@ -23,5 +23,15 @@ export const Minerals =()=>{
     )
     html += arrayOfMineralOptions.join("")
     html += "</select>"
+    
     return html
+}
+
+export const selectedMineralDisplay = () =>{
+    const currentState=getTransientState();
+
+    if ("selectedMineral" in getTransientState()){
+        return `${minerals.find(mineral => mineral.id === currentState.selectedMineral).name} has been selected`
+    }
+     return "";
 }
