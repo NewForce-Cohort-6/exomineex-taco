@@ -36,7 +36,7 @@ export const selectedColonyDisplay = () => {
 
     if ("selectedColony" in t_state)
     {
-        return `${colonies.find(colony => colony.id === t_state.selectedColony).name} colony selected`
+        return `${colonies.find(colony => colony.id === t_state.selectedColony).name} colony selected <br>`
     }
     return ''
 }

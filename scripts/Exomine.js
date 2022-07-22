@@ -22,24 +22,28 @@ export const Exomine =()=>{
         <section class ="options">
         ${Transport()}  
         </section>
+    </article>
 
-    </article>
-    <br>
-    <article>
-        <button id="availabilityButton">Check Availability</button>
-    </article>
+    <br>  
+        <p class="availabilityDisplay">
+        ${selectedMineralDisplay()}
+        ${selectedColonyDisplay()}
+        ${selectedTransportDisplay()}
+        ${selectedFacilitiesDisplay()}
+        </p>
     <article class="customOrders">
     <h2>Purchased Minerals</h2>
-    <p class="availabilityDisplay">
-        
-    </p>
-  <p class="availabilityDisplay">
-    ${selectedMineralDisplay()} <br>
-    ${selectedColonyDisplay()} <br />
-        ${selectedTransportDisplay()} <br>
-        ${selectedFacilitiesDisplay()}
-</p>
-</article>
+    </article>
+    <article class ="availability">
+        <button id="availabilityButton">Check Availability</button>
+        <div class="determinedAvailability">
+         placeholder text
+        </div>
+    </article>
+
+
+
+    
     `
 }
 

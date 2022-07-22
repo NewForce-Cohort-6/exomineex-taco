@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    font-size: 20px;
+}
+.choices {
+    display: flex;
+    
+}
+
+.options {
+   flex-wrap: flex;
+   flex-basis:16%;
+   margin: 0.5em;
+   justify-content: flex-start;
+   text-align: center;
+}
+.availability{
+    display: flex;
+    flex-direction:column;
+}
+#availabilityButton {
+    justify-content:center;
+    margin: auto;
+    border-radius: 5px;
+    width: 200px;
+    height: 35px;
+}
+.determinedAvailability{
+    align-items: flex-end;
+    width: 300px;
+    justify-content: space-between;
+    border: 1.5px dashed grey;
+    border-radius: 5px;
+}
+
+.customOrders{
+float: right;
+}
