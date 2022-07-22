@@ -1,4 +1,6 @@
 const database = {
+  orderBuilder: {},
+
   minerals: [
     {
       id: 1,
@@ -77,7 +79,7 @@ export const setFacility = (facilityId) => {
 };
 
 export const getFacilities = () => {
-  return database.facilities.map((f) => ({ ...f }));
+  return database.facilities.map((facility) => ({ ...facility }));
 };
 
 
