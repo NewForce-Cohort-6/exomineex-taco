@@ -108,3 +108,4 @@ export const setTransports = (transportId) =>{
   document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 
+export const getTransientState = () => { return { ...database.transientState} } 
