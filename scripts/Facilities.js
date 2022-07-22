@@ -1,4 +1,4 @@
-import { setFacility, getFacilities } from "./database.js"
+import { setFacility, getFacilities, getTransientState } from "./database.js"
 
 const facilities = getFacilities()
 
@@ -27,3 +27,11 @@ export const Facilities = () => {
     return html
 }
 
+export const selectedFacilitiesDisplay = () =>{
+    const currentState=getTransientState();
+
+    if ("selectedFacility" in getTransientState()){
+        return `${facilities.find(facility => facility.id === currentState.selectedFacility).name} has been selected`
+    }
+     return "";
+}
