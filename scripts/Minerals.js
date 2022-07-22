@@ -31,7 +31,7 @@ export const selectedMineralDisplay = () =>{
     const currentState=getTransientState();
 
     if ("selectedMineral" in getTransientState()){
-        return `${minerals.find(mineral => mineral.id === currentState.selectedMineral).namegit} has been selected`
+        return `${minerals.find(mineral => mineral.id === currentState.selectedMineral).name} has been selected`
     }
      return "";
 }
