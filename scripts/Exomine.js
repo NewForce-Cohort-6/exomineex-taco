@@ -1,10 +1,5 @@
-import {Minerals} from "./Minerals.js"
 import {Colonies, selectedColonyDisplay} from "./Colonies.js"
-import {Facilities} from "./Facilities.js"
-import {Transport} from "./Transports.js"
-import { getColonies, getTransientState } from "./database.js"
 import {Minerals, selectedMineralDisplay} from "./Minerals.js"
-import {Colonies} from "./Colonies.js"
 import {Facilities} from "./Facilities.js"
 import {Transport, selectedTransportDisplay} from "./Transports.js"
 
@@ -39,9 +34,8 @@ export const Exomine =()=>{
         
     </p>
   <p class="availabilityDisplay">
-    ${selectedMineralDisplay()} <br>
-        ${selectedTransportDisplay()}
-        ${selectedColonyDisplay()}
+    ${selectedMineralDisplay()} ${selectedColonyDisplay()} ${selectedTransportDisplay()}
+        
 </p>
 </article>
     `
