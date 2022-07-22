@@ -1,6 +1,6 @@
 import {Colonies, selectedColonyDisplay} from "./Colonies.js"
 import {Minerals, selectedMineralDisplay} from "./Minerals.js"
-import {Facilities} from "./Facilities.js"
+import {Facilities, selectedFacilitiesDisplay} from "./Facilities.js"
 import {Transport, selectedTransportDisplay} from "./Transports.js"
 
 
@@ -34,8 +34,10 @@ export const Exomine =()=>{
         
     </p>
   <p class="availabilityDisplay">
-    ${selectedMineralDisplay()} ${selectedColonyDisplay()} ${selectedTransportDisplay()}
-        
+    ${selectedMineralDisplay()} <br>
+    ${selectedColonyDisplay()} <br />
+        ${selectedTransportDisplay()} <br>
+        ${selectedFacilitiesDisplay()}
 </p>
 </article>
     `
