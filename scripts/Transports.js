@@ -29,7 +29,7 @@ html += '<option value="0">Select Transportation...</option>'
 export const selectedTransportDisplay = () => {
    const transientState = getTransientState()
     if ("selectedTransport" in transientState) {
-        return `${transports.find(transport => transport.id === transientState.selectedTransport).name}`
+        return `${transports.find(transport => transport.id === transientState.selectedTransport).name} <br>`
     }
      return ''
 }

@@ -31,7 +31,7 @@ export const selectedFacilitiesDisplay = () =>{
     const currentState=getTransientState();
 
     if ("selectedFacility" in getTransientState()){
-        return `${facilities.find(facility => facility.id === currentState.selectedFacility).name} has been selected`
+        return `${facilities.find(facility => facility.id === currentState.selectedFacility).name} has been selected <br>`
     }
      return "";
 }
