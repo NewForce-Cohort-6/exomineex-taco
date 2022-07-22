@@ -1,4 +1,4 @@
-import { getTransports, setTransports } from "./database.js"
+import { getTransports, getTransientState, setTransports } from "./database.js"
 
 const transports = getTransports()
 
@@ -24,4 +24,12 @@ html += '<option value="0">Select Transportation...</option>'
     html += "</select>"
 
     return html
+}
+
+export const selectedTransportDisplay = () => {
+   const transientState = getTransientState()
+    if ("selectedTransport" in transientState) {
+        return `${transports.find(transport => transport.id === transientState.selectedTransport).name}`
+    }
+     return ''
 }
