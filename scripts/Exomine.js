@@ -19,7 +19,6 @@ export const Exomine =()=>{
         <section class ="options">
         ${Transport()}  
         </section>
-        <p></p>
     </article>
     <br>
     <article>
