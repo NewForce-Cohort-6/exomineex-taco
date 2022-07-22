@@ -1,7 +1,9 @@
 import {Minerals} from "./Minerals.js"
-import {Colonies} from "./Colonies.js"
+import {Colonies, selectedColonyDisplay} from "./Colonies.js"
 import {Facilities} from "./Facilities.js"
 import {Transport} from "./Transports.js"
+import { getColonies, getTransientState } from "./database.js"
+
 
 export const Exomine =()=>{
     return `<h1> Exomine</h1>
@@ -26,7 +28,9 @@ export const Exomine =()=>{
     </article>
     <article class="customOrders">
     <h2>Purchased Minerals</h2>
-
+    <p class="availabilityDisplay">
+        ${selectedColonyDisplay()}
+    </p>
 </article>
     `
 }
