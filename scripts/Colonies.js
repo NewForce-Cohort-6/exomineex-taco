@@ -1,4 +1,4 @@
-import { getColonies, setColony } from "./database.js";
+import { getColonies, getTransientState, setColony } from "./database.js";
 
 const colonies = getColonies()
 
@@ -28,4 +28,15 @@ export const Colonies = () => {
     html += "</select>"
     
     return html
+}
+
+export const selectedColonyDisplay = () => {
+
+    const t_state = getTransientState()
+
+    if ("selectedColony" in t_state)
+    {
+        return `${colonies.find(colony => colony.id === t_state.selectedColony).name} colony selected`
+    }
+    return ''
 }
