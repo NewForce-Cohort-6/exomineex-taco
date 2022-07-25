@@ -2,7 +2,7 @@ import { Exomine } from "./Exomine.js"
 
 const mainContainer = document.querySelector("#container")
 
-const renderAllHTML = () => {
+export const renderAllHTML = () => {
     mainContainer.innerHTML = Exomine()
 }
 

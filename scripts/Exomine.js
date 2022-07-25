@@ -4,6 +4,7 @@ import {Facilities, selectedFacilitiesDisplay} from "./Facilities.js"
 import {Transport, selectedTransportDisplay} from "./Transports.js"
 import { PurchasedMinerals } from "./PurchasedMinerals.js"
 import { getFacilityMinerals, getTransientState, setPurchasedMineral } from "./database.js"
+import {renderAllHTML} from "./main.js"
 // In event listener for 'Check Availability' button:
 //     Filter facilityMinerals by selectedFacility === facilityMineral.facilityID
 //     AND selectedMineral === facilityMineral.mineralID
@@ -19,22 +20,32 @@ document.addEventListener(
     "click", (event) => {
         const itemClicked = event.target
         if (itemClicked.id === "availabilityButton") {
+            
+            renderAllHTML()
+    }
+}
+)
+
+const AvailabilityDisplay = () => {
+
         const facilityMinerals = getFacilityMinerals()
         const foundTransientState = getTransientState()
         const grabMinerals = Minerals()
         const grabFacilities = Facilities()
+        let availabilityHTML = "";
         console.log(foundTransientState)
         const foundFacility = facilityMinerals.find(_facility => foundTransientState.selectedFacility === _facility.facilityId && foundTransientState.selectedMineral === _facility.mineralId)
         
         if (foundFacility) {
             setPurchasedMineral()
+            availabilityHTML=`You bought it!!!`
             
         } else {
-            alert(`The selected mineral is not available at this facility.`)
+            availabilityHTML= `The selected mineral is not available at this facility.`
         }
-        }
-    }
-)
+        
+        return availabilityHTML
+} 
 
 export const Exomine =()=>{
     return `<h1> Exomine</h1>
@@ -67,7 +78,7 @@ export const Exomine =()=>{
     <article class ="availability">
         <button id="availabilityButton">Check Availability</button>
         <div class="determinedAvailability">
-         placeholder text
+         ${AvailabilityDisplay()}
         </div>
     </article>
 
