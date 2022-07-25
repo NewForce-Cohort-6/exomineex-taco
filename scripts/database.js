@@ -194,5 +194,5 @@ export const setPurchasedMineral = () => {
 
   database.transientState = {}
 
- // document.dispatchEvent(new CustomEvent("stateChanged"))
+  document.dispatchEvent(new CustomEvent("stateChanged"))
 }
