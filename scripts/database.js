@@ -70,6 +70,47 @@ const database = {
 },
 
   ],
+
+  facilityMinerals: [
+    {
+      id: 1,
+      facilityId: 1,
+      mineralId: 1,     
+    },
+    {
+      id: 2,
+      facilityId: 1,
+      mineralId: 2,     
+    },
+    {
+      id: 3,
+      facilityId: 2,
+      mineralId: 1,     
+    },
+    {
+      id: 4,
+      facilityId: 2,
+      mineralId: 3,     
+    },
+    {
+      id: 5,
+      facilityId: 3,
+      mineralId: 1,     
+    },
+    {
+      id: 6,
+      facilityId: 3,
+      mineralId: 2,     
+    },
+    {
+      id: 7,
+      facilityId: 3,
+      mineralId: 3,     
+    }
+  ],
+  purchasedMinerals: [
+    {id: 1, mineralId: 2, transportId: 2}
+  ],
   transientState: {},
 };
 
@@ -114,3 +155,44 @@ export const getTransientState = () => {
   return { ...database.transientState}
 }
 
+export const getFacilityMinerals = () => {
+  return database.facilityMinerals.map((facilityMineral) => ({...facilityMineral}))
+}
+
+export const getPurchasedMinerals = () => {
+  return database.purchasedMinerals.map((purchasedMineral) => ({...purchasedMineral}))
+}
+      //  // Copy the current state of user choices
+      //  const newOrder = {...database.orderBuilder}
+    
+      //  // Add a new primary key to the object
+      //  const lastIndex = database.customOrder.length - 1
+      //  newOrder.id = database.customOrder[lastIndex].id + 1
+   
+      //  // Add a timestamp to the order
+      //  newOrder.timestamp = Date.now()
+   
+      //  // Add the new order object to custom orders state
+      //  database.customOrder.push(newOrder)
+   
+      //  // Reset the temporary state for user choices
+      //  database.orderBuilder = {}
+   
+      //  // Broadcast a notification that permanent state has changed
+      //  document.dispatchEvent(new CustomEvent("stateChanged"))
+      
+export const setPurchasedMineral = () => {
+  
+  const newPurchase = {...database.transientState}
+
+  const lastIndex = database.purchasedMinerals.length - 1
+  newPurchase.id = database.purchasedMinerals[lastIndex].id + 1
+  let newPurchaseTrans = {}
+  newPurchaseTrans.mineralId = newPurchase.selectedMineral
+  newPurchaseTrans.transportId = newPurchase.selectedTransport
+  database.purchasedMinerals.push(newPurchaseTrans)
+
+  database.transientState = {}
+
+  // document.dispatchEvent(new customEvent("stateChanged"))
+}
