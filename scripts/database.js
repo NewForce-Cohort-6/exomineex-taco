@@ -116,7 +116,7 @@ const database = {
 
 export const setFacility = (facilityId) => {
   database.transientState.selectedFacility = facilityId;
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  // document.dispatchEvent(new CustomEvent("stateChanged"));
 };
 
 export const getFacilities = () => {
@@ -130,7 +130,7 @@ export const getColonies = () => {
 
 export const setColony = (colonyId) => {
   database.transientState.selectedColony = colonyId
-  document.dispatchEvent(new CustomEvent("stateChanged"))
+  //document.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const getMinerals =()=>{
@@ -139,7 +139,7 @@ export const getMinerals =()=>{
 
 export const setMineral =(mineralId)=>{
   database.transientState.selectedMineral = mineralId;
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  // document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 
 export const getTransports = () =>{
@@ -148,7 +148,7 @@ export const getTransports = () =>{
 
 export const setTransports = (transportId) =>{
   database.transientState.selectedTransport = transportId;
-  document.dispatchEvent(new CustomEvent("stateChanged"));
+  // document.dispatchEvent(new CustomEvent("stateChanged"));
 }
 
 export const getTransientState = () => {
@@ -194,5 +194,5 @@ export const setPurchasedMineral = () => {
 
   database.transientState = {}
 
-  // document.dispatchEvent(new customEvent("stateChanged"))
+  document.dispatchEvent(new CustomEvent("stateChanged"))
 }

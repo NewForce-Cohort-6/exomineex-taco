@@ -21,13 +21,16 @@ document.addEventListener(
         if (itemClicked.id === "availabilityButton") {
         const facilityMinerals = getFacilityMinerals()
         const foundTransientState = getTransientState()
+        const grabMinerals = Minerals()
+        const grabFacilities = Facilities()
         console.log(foundTransientState)
-        const foundFacility = facilityMinerals.filter(_facility => foundTransientState.selectedFacility === _facility.facilityId && foundTransientState.selectedMineral === _facility.mineralId)
+        const foundFacility = facilityMinerals.find(_facility => foundTransientState.selectedFacility === _facility.facilityId && foundTransientState.selectedMineral === _facility.mineralId)
         
-        if (foundFacility.length === 0) {
-            return `The selected mineral is not available at this facility.`
-        } else {
+        if (foundFacility) {
             setPurchasedMineral()
+            
+        } else {
+            alert(`The selected mineral is not available at this facility.`)
         }
         }
     }
